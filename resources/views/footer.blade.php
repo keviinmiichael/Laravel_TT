@@ -1,3 +1,3 @@
-@yield('footer')
 
-<h1>asjkdhask</h1>
+
+<p>SOY UN HERMOSO FOOTER =) </p>

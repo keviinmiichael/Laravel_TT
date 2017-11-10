@@ -1,21 +1,21 @@
 @extends('estructura_base')
 
-@section('title', 'Vista De Peliculas' )
+@section('TITULO', 'lista de peliculas')
 
 
 @section('content')
-	@if (isset($result))
-		{{ $result }}
-	@endif
 
-	@if (isset($peliculas))
-	<h1>Lista de Peliculas</h1>
-	<ul>
-		@forelse ($peliculas as $key => $unaPelicula)
-			<li>{{ $unaPelicula }}</li>
-		@empty
-			<h2>No hay peliculas</h2>
-		@endforelse
-	</ul>
-	@endif
+		@foreach ($peliculas as $pelicula)
+			<a href="peliculas/{{$pelicula->id}}"><h2>{{$pelicula->title}}</h3></a>
+				<a href="editarPelicula/{{$pelicula->id}}">Editar!</a>
+
+				<form class="" action="{{route('borrar', $pelicula)}}" method="post">
+					{{csrf_field()}}
+					{{ method_field('DELETE') }}
+
+					<button type="submit" name="delete">x</button>
+
+
+				</form>
+		@endforeach
 @endsection

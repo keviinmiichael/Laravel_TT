@@ -3,9 +3,9 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>@yield('title')</title>
+		<title>@yield('TITULO')</title>
 	</head>
-	<body>
+	<body style="text-align:center; border:2px solid;">
 		@yield('content')
 	</body>
 

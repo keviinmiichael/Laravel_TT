@@ -2,26 +2,26 @@
 
 @section('content')
 	{{-- al no tener action por defecto el post vuelve a la misma ruta  --}}
-	<form id="agregarPelicula"  name="agregarPelicula" method="POST">
+	<form id="agregarPelicula" action="{{route('edicionFinal', $pelicula)}}"  name="agregarPelicula" method="POST">
 		{{-- Para que funcione el formulario debo SI O SI incluir el helper csrf_field() entre llaves, el cual me permite "crear" un token para tener permisos de acceder a mi proyecto por post --}}
 		{{csrf_field()}}
-		
+		{{ method_field('PUT') }}
 
             <div>
                 <label for="titulo">Titulo</label>
-                <input type="text" name="title" id="titulo" value="{{ old('title') }}"/>
+                <input type="text" name="title" id="titulo" value="{{old('title', $pelicula->title)}}"/>
             </div>
             <div>
                 <label for="rating">Rating</label>
-                <input type="text" name="rating" id="rating" value="{{ old('rating') }}"/>
+                <input type="text" name="rating" id="rating" value="{{$pelicula->rating}}"/>
             </div>
             <div>
                 <label for="premios">Premios</label>
-                <input type="text" name="awards" id="premios" value="{{ old('awards') }}"/>
+                <input type="text" name="awards" id="premios" value="{{$pelicula->awards}}"/>
             </div>
             <div>
                 <label for="duracion">Duracion</label>
-                <input type="text" name="length" id="duracion" value="{{ old('length') }}"/>
+                <input type="text" name="length" id="duracion" value="{{$pelicula->length}}"/>
             </div>
             <div>
                 <label>Fecha de Estreno</label>
