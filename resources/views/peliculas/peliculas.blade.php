@@ -6,7 +6,9 @@
 @section('content')
 
 		@foreach ($peliculas as $pelicula)
-			<a href="peliculas/{{$pelicula->id}}"><h2>{{$pelicula->title}}</h3></a>
+			<a href="peliculas/{{$pelicula->id}}"><h2>{{$pelicula->title}} - @if ($pelicula->genre)
+				{{$pelicula->genre->name}}
+			@endif</h3></a>
 				<a href="editarPelicula/{{$pelicula->id}}">Editar!</a>
 
 				<form class="" action="{{route('borrar', $pelicula)}}" method="post">

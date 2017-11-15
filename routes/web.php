@@ -39,3 +39,12 @@ Route::get('editarPelicula/{id}', 'MoviesController@editform');
 Route::put('editarPelicula/{id}', 'MoviesController@edicionFinal')->name('edicionFinal');
 
 Route::delete('borrarPeli/{id}', 'MoviesController@delete')->name('borrar');
+
+Route::resource("movies", 'PeliculasController');
+
+
+
+Route::get('ejemplo', 'EjemploController@ejemplo');
+
+Route::get('formFoto', 'EjemploController@formFoto');
+Route::post('formFoto', 'EjemploController@guardarFoto');

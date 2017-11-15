@@ -8,4 +8,7 @@
 			<li>{{$actor->getNombreCompleto()}}</li> - {{$actor->rating}}
 		@endforeach
 	</ul>
+	{{
+		$actores->links()
+	}}
 @endsection

@@ -17,7 +17,9 @@ class MoviesController extends Controller
 	// ];
 
     public function mostrarPeliculas(){
-		$peliculas = Movie::all();
+		$peliculas = Movie::with('genre')->get();
+		
+
 		return view('peliculas.peliculas', compact('peliculas'));
 	}
 
@@ -117,7 +119,7 @@ public function nuevaPelicula(Request $request){
 		$pelicula = Movie::find($id);
 
 		$pelicula->delete();
-		
+
 		return redirect()->route('todas_las_pelis');
 
 	}

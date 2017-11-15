@@ -8,7 +8,7 @@ use App\Actor;
 class ActorController extends Controller
 {
     public function listaActores(){
-		$actores = Actor::all();
+		$actores = Actor::paginate(4);
 
 		return view('actores', compact('actores'));
 	}
