@@ -1,4 +1,5 @@
 <?php
+use App\Product;
 
 
 Route::get('/', function () {
@@ -48,3 +49,10 @@ Route::get('ejemplo', 'EjemploController@ejemplo');
 
 Route::get('formFoto', 'EjemploController@formFoto');
 Route::post('formFoto', 'EjemploController@guardarFoto');
+
+
+
+Route::get('test', function(){
+		$products = App\Product::with('category')->get();
+		dd( $products);
+});

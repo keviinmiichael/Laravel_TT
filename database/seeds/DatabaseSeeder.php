@@ -12,5 +12,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+		// \DB::table('categories')->insert([
+      //   ['name' => 'Notebooks'],
+      //   ['name' => 'Netbooks'],
+      //   ['name' => 'Tablets'],
+      //   ['name' => 'Celulares']
+      // ]);
+
+
+	  $product = factory(App\Product::class, 20)->create();
+
+
     }
 }
