@@ -11,23 +11,23 @@ class AlterTableCategory extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-		Schema::table('categories', function (Blueprint $table) {
-			$table->integer('name')->change();
-		});
-
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-		Schema::table('categories', function (Blueprint $table) {
-			$table->string('name',40)->change();
-		});
-    }
+    // public function up()
+    // {
+	// 	Schema::table('categories', function (Blueprint $table) {
+	// 		$table->integer('name')->change();
+	// 	});
+    //
+    // }
+    //
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+	// 	Schema::table('categories', function (Blueprint $table) {
+	// 		$table->string('name',40)->change();
+	// 	});
+    // }
 }
