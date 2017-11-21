@@ -7,6 +7,10 @@ use App\Movie;
 
 class MoviesController extends Controller
 {
+	//corre el middleware para todos los metodos de este controlador
+	// public function __construc(){
+	// 	$this->middleware('isAdmin');
+	// }
 	// private $peliculas = [
 	// 	1 => "Toy Story",
 	// 	2 => "Buscando a Nemo",
@@ -18,13 +22,12 @@ class MoviesController extends Controller
 
     public function mostrarPeliculas(){
 		$peliculas = Movie::with('genre')->get();
-		
+
 
 		return view('peliculas.peliculas', compact('peliculas'));
 	}
 
-	public function showPelicula($id){
-		$pelicula = Movie::find($id);
+	public function showPelicula(Movie $pelicula){
 
 		return view('peliculas.unaPelicula', compact('pelicula'));
 	}

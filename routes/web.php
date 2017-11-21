@@ -22,10 +22,11 @@ Route::get('actores', 'ActorController@listaActores');
 
 
 Route::get('peliculas/buscar/{nombre}', 'MoviesController@buscarPorNombre');
-Route::get('peliculas/{id}', 'MoviesController@showPelicula');
+Route::get('peliculas/{pelicula}', 'MoviesController@showPelicula');
 
 // entro por get para ver el formulario
-Route::get('/agregarPelicula', 'MoviesController@agregarPelicula')->middleware('isAdmin');
+// Route::get('/agregarPelicula', 'MoviesController@agregarPelicula')->middleware('isAdmin');
+Route::get('/agregarPelicula', 'MoviesController@agregarPelicula');
 
 // entro por POST para ver "Pelicula Agregada Exitosamente", como el action de mi form no apunta a nada, se dirige a la misma ruta, pero por POST
 Route::post('/agregarPelicula', 'MoviesController@nuevaPelicula');
